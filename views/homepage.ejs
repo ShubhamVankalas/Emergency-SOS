@@ -1,0 +1,25 @@
+<%- include("partials/header"); -%>
+<section class="flex flex-col text-center justify-center">
+  <div class="mt-24 mb-20 text-2xl font-poppins font-bold text-[#EEEEEE]">
+    <span class="text-2xl"><i class="text-[#00ADB5] m-6 fa-regular fa-user fa-xl"></i></span>
+    <h1>Welcome <span class="text-red-600"><%= userName %></span></h1>
+  </div>
+  <div class="text-[#EEEEEE] font-poppins font-bold text-lg leading-relaxed">
+    <button onclick="getLocation()">Your Location</button>
+    <p><span>Lat: </span> <span id="displayUserLat"> </span> 
+      <br>
+      <span>Long: </span> <span id="displayUserLong"> </span></p>
+  </div>
+  <div class=" ">
+    <form action="/home" method="post">
+      <input name="userLat" id="userLat" type="hidden">
+      <input name="userLong" id="userLong" type="hidden">
+      <button
+        class="bg-red-500 text-[#EEEEEE] border-4 border-[#EEEEEE] p-9 rounded-full font-poppins text-xl font-bold mt-20"
+      >
+        SOS
+      </button>
+    </form>
+  </div>
+</section>
+<%- include("partials/footer"); -%>

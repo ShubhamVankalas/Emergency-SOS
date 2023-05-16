@@ -1,0 +1,47 @@
+<%- include("partials/header"); -%>
+<section class="flex flex-col text-center">
+  <div class="mt-16">
+    <h1 class="font-bold text-2xl text-[#EEEEEE] font-poppins">
+      Emergency <span class="text-red-600"> SOS</span>
+    </h1>
+  </div>
+  <div class="backdrop-blur-sm bg-[#393E46] m-9 pt-10 pb-10 pr-5 pl-5 rounded-lg">
+    <span class="text-2xl"><i class="text-[#00ADB5] m-6 fa-regular fa-user fa-xl"></i></span>
+    <h1 class="font-bold text-lg text-[#EEEEEE] font-poppins mb-5">
+      Sign in into your account
+    </h1>
+    <h1 class="text-sm text-red-600 font-poppins mb-5 w-full">
+      <%= error %>
+    </h1>
+    <form class="flex flex-col" action="/login" method="post">
+      <label for="Username" class="flex justify-start text-[#EEEEEE] font-poppins"
+        ><b>Username</b></label
+      >
+      <input
+      class="rounded-xl placeholder:text-center p-2 mb-5 bg-[#EEEEEE]"
+        type="text"
+        placeholder="name@gmail.com"
+        name="Username"
+        required
+      />
+
+      <label
+        for="Userpassword"
+        class="flex justify-start text-[#EEEEEE] font-poppins"
+        ><b>Password</b></label
+      >
+      <input
+      class="rounded-xl placeholder:text-center p-2 bg-[#EEEEEE]"
+        type="password"
+        placeholder="********"
+        name="Userpassword"
+        required
+      />
+      <button   class="bg-[#00ADB5] text-[#EEEEEE] text-lg w-full mt-5 p-2 rounded-xl" type="submit">Sign In</button>
+    </form>
+    <div>
+        <button class="bg-[#00ADB5] text-[#EEEEEE] text-lg w-full mt-5 p-2 rounded-xl"><a href="/signup">Sign up</a></button>
+    </div>
+  </div>
+</section>
+<%- include("partials/footer"); -%>
