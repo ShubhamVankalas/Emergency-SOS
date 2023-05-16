@@ -198,10 +198,5 @@ app.post("/home", (req, res) => {
 
 const port = 3030
 
-const options ={
-  key:fs.readFileSync(path.join(__dirname,'./cert/key.pem')),
-  cert:fs.readFileSync(path.join(__dirname,'./cert/cert.pem')) 
-}
-
-const sslserver = https.createServer(options, app)
+const sslserver = https.createServer(app)
 sslserver.listen(port,()=>{console.log(`Secure Server is listening on port ${port}`)});
